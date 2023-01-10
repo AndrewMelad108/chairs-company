@@ -1,0 +1,856 @@
+body {
+
+  perspective: 700px;
+ 
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+:root {
+  --mainColor: #7b5244;
+  --subColor: #333;
+}
+.padding-section{padding-top: 40px; padding-bottom: 50px;}
+.container {
+  width: 80%;
+  margin: auto; /*عشان يكون في نص الصفحه*/
+}
+.section-header {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.section-header .line {
+  margin: auto;
+  width: 145px;
+  display: block;
+  background-color: var(--mainColor);
+  height: 2px;
+  transition: width ease-in-out 0.45s;
+}
+.section-header:hover .line {
+  width: 170px;
+}
+.list-unstyled {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/********************************Start Template Style*************************************************/
+
+/**************************************start haeder****************************************************************/
+header {
+  padding: 30px 0;
+}
+
+header .head-content ul li,
+header .head-content ul li a {
+  color: var(--subColor);
+}
+
+header .head-content ul li {
+  display: inline-block; /*جنب بعضliخلي كل */
+}
+header .head-content {
+  display: flex;
+  justify-content: space-between; /*بيكون علي بعد مسافه*/
+  align-items: center; /*بيحازي المحتوي*/
+}
+/*بطريقه متساويهnavهنا عشان احدد المساحه وكمان افرد ال*/
+header .head-content img {
+  flex: 1;
+  max-width: 150px;
+}
+header .head-content nav {
+  flex: 6;
+  padding: 0 61px;
+}
+
+header .head-content nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .head-content nav ul li a {
+  font-weight: bold;
+  position: relative;
+  display: block;
+  transition: padding 0.5s ease-in-out;
+}
+header .head-content nav ul li:hover a {
+  color: var(--mainColor);
+  padding-left: 8px;
+}
+/*.head-content .navbar ul li .links-item::before
+{
+    position: absolute;
+    content: "";
+    border: 0 4px;
+   border-color:var(--mainColor) ;
+   border-style:solid;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale3d(1,0,1);
+    transition: all ease-in-out 0.2s;
+}
+.head-content .navbar ul li .links-item:hover::before{ transform: scale3d(1,1,1);}
+.head-content .navbar ul li .links-item::after
+{
+    position: absolute;
+    content: "";
+    border-width: 4px 0px;
+   border-color:var(--mainColor) ;
+   border-style:solid;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale3d(1,0,1);
+    transition: all ease-in-out 0.2s;
+}
+.head-content .navbar ul li .links-item:hover::after{ transform: scale3d(1,1,1);}
+*/
+header .head-content .login {
+  flex: 2;
+  text-align: right;
+}
+header .head-content .login ul li {
+  padding: 0 6px;
+}
+
+header .head-content .login ul li:last-child i {
+  position: relative;
+}
+
+header .head-content .login ul li:last-child i::after/*حرف الصفر في الايقونه*/ {
+  position: absolute;
+  content: "0";
+  width: 10px;
+  background-color: var(--mainColor);
+  bottom: -9px;
+  left: 18px;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 50%;
+  padding-right: 5px;
+}
+header .head-content .login ul li span {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+/*******Start dropdown*******/
+
+.dropdown {
+  position: relative;
+  z-index: 20000;
+}
+.dropdown-menu {
+  position: absolute;
+  width: 400px;
+  border: 4px solid var(--mainColor);
+  background-color: white;
+  margin-top: 30px;
+  height: 200px;
+  transform: scale(0);
+  transition: all ease-in-out 0.45s;
+}
+.dropdown-2 {
+  position: relative;
+  z-index: 200100;
+}
+.dropdown-menu-2 {
+  position: absolute;
+  width: 400px;
+  border: 4px solid var(--mainColor);
+  background-color: white;
+  margin-top: 30px;
+  height: 200px;
+  transition: all ease-in-out 0.45s;
+}
+.dropdown:hover .dropdown-menu {
+  transform: scale(1);
+}
+
+.dropdown .dropdown-menu ul {
+  display: table-cell; /*عباره عن جدولul بتخلي */
+  padding: 13px 15px;
+}
+.dropdown .dropdown-menu ul li {
+  line-height: 1.7;
+}
+.dropdown .dropdown-menu ul li:first-child  {
+  color: var(--mainColor);
+}
+/*******End dropdown*******/
+/**************************************End header****************************************************************/
+
+/**************************************start slider****************************************************************/
+.slider
+{
+  position: relative;
+}
+.slider img {
+  width: 100%;
+}
+.slider .right
+{
+  position: absolute;
+  right: 150px;
+  bottom: 264px;
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid var(--mainColor);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  transform: scale(0);
+  transition: all ease-in-out 0.45s;
+  visibility: hidden;
+}
+.slider .left
+{
+  position: absolute;
+  left: 150px;
+  bottom: 264px;
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid var(--mainColor);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  transform: scale(0);
+  transition: scale ease-in-out 0.45s;
+  visibility: hidden;
+}
+.slider:hover .left ,.slider:hover .right
+{
+  transform: scale(1);
+  visibility: visible;
+}
+
+.slider .left:hover,.slider .right:hover
+{
+ 
+  background-color: black;
+  color: #fff;
+  outline: 2px solid black;
+}
+
+.slider .point1
+{
+  position: absolute;
+  background-color: #fff;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  bottom: 10px;
+  right: 665px;
+}
+.slider .point2
+{
+  position: absolute;
+  background-color: #fff;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  bottom: 10px;
+  right: 683px;
+  
+}
+.slider .point1:hover,
+.slider .point2:hover
+{
+  background-color: black;
+}
+/**************************************End Slider****************************************************************/
+
+/**************************************start Section Category****************************************************************/
+.category{position: relative;}
+.section-header {
+  margin-bottom: 20px;
+}
+.category-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 0px;
+}
+
+.category-item img {
+  width: 100%;
+  margin-bottom: 25px;
+  z-index: 1;
+}
+.category-items h4 {
+  color: gray;
+  font-size: normal;
+  margin-bottom: 4px;
+}
+.category-item {
+  position: relative;
+}
+.category-item .icon {
+  width: 35px;
+  height: 35px;
+  background-color: var(--mainColor);
+  text-align: center;
+  color: #fff;
+  line-height: 35px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.7s ease-in-out;
+}
+.category-item:hover .icon {
+  opacity: 1;
+  visibility: visible;
+}
+.category .right
+{
+
+  color: red;
+  text-align: center;
+
+}
+/*
+.category .left
+{
+  
+
+  bottom: 0px;
+  right: 0px;
+
+  
+}
+.category .right:hover,
+.category .left:hover
+{
+  background-color: black;
+}
+*/
+/**************************************End Section Category****************************************************************/
+.discount 
+{
+  margin: 50px 0;
+  display: grid;
+  grid-template-columns: "auto auto auto ";
+  grid-column-gap:50px ;
+  position: relative;
+  padding: 0 120px;
+  box-shadow: 10px 0px 0px #9b8d89   ;
+  margin: 50px 0px;
+  background: -webkit-linear-gradient(top ,#d4bdb6 -30%, white 80%  );
+}
+
+.discount-des 
+{
+  grid-column: 1/2;
+  padding: 30px;
+  background-color:#fdede7;
+}
+.discount-des .icon{color: var(--mainColor);}
+.discount-des .title
+{
+  position: absolute;
+  left: 210px;
+  top: 39px;
+}
+.discount-des .sub-title
+{
+  color: gray;
+  position: absolute; 
+  left: 212px;
+  top: 63px;
+}
+.discount-des p
+{
+  line-height: 1.8;
+  padding-top: 10px;
+  color: #846a6a
+  }
+.discount-item{
+   grid-column: 2/3;
+   background-image: url("../images/cms-banner-1.jpg");
+   background-size: cover;
+   padding: 17px 81px 204px 20px;
+   transition: background 0.45s ease-in-out;
+   height: 300px;
+   width: 300px;
+}
+.discount-item:hover 
+{
+  cursor: pointer;
+  transform: scale(1);
+}
+.discount-items {
+  grid-column: 3/4;
+  background-image: url("../images/cms-banner-2.jpg");
+  background-size: cover;
+  padding: 17px 81px 204px 20px;
+  height: 300px;
+}
+.discount-item h4,.discount-items h4
+{
+  color: var(--mainColor);
+  font-size: 20px;
+  font-weight: normal;
+}
+.discount-item h3,.discount-items h3{font-size: 20px;}
+/***************************************start sprite section**********************************************************/
+.sprite
+{
+  display: grid;
+ grid-template-columns: repeat(5,1fr);
+ text-align: center;
+ margin-left: 81px;
+ margin-right: 61px;
+
+ 
+}
+.sprite .sprite-info h3
+{
+  padding: 10px 0px;
+  font-size: 20px;
+}
+.sprite .sprite-info span{color: gray;}
+.sprite-icon
+{
+  background-image:url("../images/service-icon.png")  ;
+  background-repeat: no-repeat;
+  height: 40px;
+
+}
+.sprite-icon-1
+{
+  background-position: center -1px;
+  transition: all 0.5s;
+}
+.sprite-item:hover .sprite-icon-1{background-position: center -95px;}
+
+.sprite-icon-2
+{
+  background-position: center -187px;
+  transition: all 0.5s;
+
+}
+.sprite-item:hover .sprite-icon-2{background-position: center -281px;}
+.sprite-icon-3
+{
+  background-position: center -370px;
+  transition: all 0.5s;
+
+}
+.sprite-item:hover .sprite-icon-3{background-position: center -464px;}
+.sprite-icon-4
+{
+  background-position: center -556px;
+  transition: all 0.5s;
+
+}
+.sprite-item:hover .sprite-icon-4{background-position: center -650px;}
+.sprite-icon-5
+{
+  background-position: center -743px;
+  transition: all 0.5s;
+
+}
+.sprite-item:hover .sprite-icon-5{background-position: center -833px;}
+/*************************************************************start product section*********************************************************************************/
+
+ .list-products
+{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.product .list-products li a
+{
+  margin: 10px 30px ; 
+  font-weight: bold;
+  font-size: 20px;
+  color:black;
+}
+.product-items
+{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 15px;
+  margin-top: 20px;
+}
+ .list-products li:hover a{color: var(--mainColor);}
+ .product-img
+{
+  position: relative;
+
+}
+/***********************************start .product-item-1********************************************************/
+.product-item-1 .overlay
+{
+  position: absolute;
+  top: 48%;
+  left: 10%;
+  transform: scaleX(0);
+  opacity: 0.7;
+  transition: ease-in-out 0.3s transform;
+
+}
+.product-item-1 .overlay ul
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+.product-item-1 .overlay ul li
+{
+  display: inline-block;
+  color: black;
+  background-color: var(--mainColor);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.product-item-1:hover .overlay{transform: scaleX(1);}
+/***********************************start .product-item-2********************************************************/
+.product-item-2 .overlay
+{
+  position: absolute;
+  top: 48%;
+  left: 40%;
+  transform: scaleX(0);
+  opacity: 0.7;
+
+  transition: ease-in-out 0.3s transform;
+
+}
+.product-item-2 .overlay ul
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+.product-item-2 .overlay ul li
+{
+  display: inline-block;
+  color: black;
+  background-color: var(--mainColor);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.product-item-2:hover .overlay{transform: scaleX(1);}
+/***********************************start .product-item-3********************************************************/
+.product-item-3 .overlay
+{
+  position: absolute;
+  top: 48%;
+  left: 68%;
+ transform: scaleX(0);
+ opacity: 0.7;
+  transition: ease-in-out 0.3s transform;
+
+}
+.product-item-3 .overlay ul
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+.product-item-3 .overlay ul li
+{
+  display: inline-block;
+  color: black;
+  background-color: var(--mainColor);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.product-item-3:hover .overlay{transform: scaleX(1);}
+/***********************************start .product-item-4********************************************************/
+.product-item-4 .overlay
+{
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  transform: scaleX(0);
+  opacity: 0.7;
+  transition: ease-in-out 0.3s transform;
+
+}
+.product-item-4 .overlay ul
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+.product-item-4 .overlay ul li
+{
+  display: inline-block;
+  color: black;
+  background-color: var(--mainColor);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.product-item-4:hover .overlay{transform: scaleX(1);}
+/***********************************start .product-item-5********************************************************/
+.product-item-5 .overlay
+{
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: scaleX(0);
+  opacity: 0.7;
+  transition: ease-in-out 0.3s transform;
+
+}
+.product-item-5 .overlay ul
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+.product-item-5 .overlay ul li
+{
+  display: inline-block;
+  color: black;
+  background-color: var(--mainColor);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.product-item-5:hover .overlay{transform: scaleX(1);}
+/***********************************start .product-item-6********************************************************/
+.product-item-6 .overlay
+{
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  transform: scaleX(0);
+  opacity: 0.7;
+  transition: ease-in-out 0.3s transform;
+
+}
+.product-item-6 .overlay ul
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+.product-item-6 .overlay ul li
+{
+  display: inline-block;
+  color: black;
+  background-color: var(--mainColor);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.product-item-6:hover .overlay{transform: scaleX(1);}
+/*************************************************************End product section************************************************/
+
+/***************************************start description section**********************************************************/
+.description
+{
+  display: grid;
+  grid-template-areas:"des content content  ";
+  margin-left: 128px;
+  margin-right: 50px;
+  grid-column-gap:25px ;
+
+}
+.image-des
+{
+  grid-area: des;
+  flex: 1;
+  position: relative;
+  grid-column: 1/2;
+}
+.banner
+{
+  width: 390px;
+  height: 314px;
+
+}
+.play
+{
+  position: absolute;
+  left: 43%;
+  top: 49%;
+}
+.content
+{
+  grid-area:content ;
+  grid-column: 2/4;
+ background-color: #fde9e3;
+ position: relative;
+ width: 750px;
+
+}
+.content span
+{
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--mainColor);
+  top: 20px;
+  left: 15px;
+  padding-bottom: 50px;
+
+}
+.content .data
+{
+  position: absolute;
+  top: 55px;
+  left: 15px;
+  color: var(--mainColor);
+}
+.content p
+{
+  position: absolute;
+  left: 15px;
+  top:80px;
+  line-height: 1.8;
+  color: gray;
+}
+/*************************************************************End description section************************************************/
+.client
+{
+  margin: 50px 20px 50px 150px;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+
+}
+.client img
+{
+  height: 90px;
+  width: 80px;
+}
+/*****************************************start footer section*****************************************************************/
+footer
+{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  width: 100%;
+  height: 400px;
+  color: #fff;
+  background-color: black;
+  grid-gap:0px 50px ;
+}
+.section1
+{
+  position: relative;
+  grid-column: 1/3;
+}
+.section1 .logo
+{
+  position: absolute;
+  top:60px;
+  left: 40px;
+}
+.section1 p
+{
+  position: absolute;
+  top:158px;
+  left: 40px;
+  line-height: 1.7;
+}
+.section1 .images
+{
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+.section2 
+{
+  grid-column: 3/4;
+
+}
+.section2 h3
+{
+  padding: 66px 10px 20px 10px;
+}
+.section2 ul li a
+{
+  color: gray;
+  line-height: 2;
+  transition: padding 1s;
+  
+}
+.section2  li a:hover{padding-left: 20px;color: #fff;}
+.section3 
+{
+  grid-column: 4/5;
+
+}
+.section3 h3
+{
+  padding: 66px 10px 20px 10px;
+}
+.section3 ul li a
+{
+  color: gray;
+  line-height: 2;
+  transition: padding 1s;
+  
+}
+.section3  li a:hover{padding-left: 20px;color: #fff;}
+.section4 
+{
+  grid-column: 5/7;
+
+}
+.section4 h3
+{
+  padding: 66px 10px 20px 10px;
+}
+.section4 input
+{
+  margin: 68px 20px 30px 10px;
+  height: 40px;
+  width: 250px;
+  background-color: black;
+  border: 0;
+  border-bottom:1px solid gray ;
+}
+.section4 input::placeholder{font-size: 15px;}
+.section4 .icon
+{
+  color: #fff;
+  z-index: 2000;
+}
+.section4 .icon:hover{color: var(--mainColor);}
+.section4 .social
+{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
